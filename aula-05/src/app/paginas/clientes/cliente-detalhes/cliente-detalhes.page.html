@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Cliente Detalhes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+
+  <ion-card>
+
+    <ion-card-header color="primary">
+      <ion-item color="primary" lines="none">
+
+        <ion-thumbnail slot="start">
+          <img [src]="cliente.foto">
+        </ion-thumbnail>
+
+        <ion-label>{{cliente.nome}}</ion-label>
+
+      </ion-item>
+    </ion-card-header>
+    
+    <ion-card-content>
+      
+        <form>
+
+          <!--
+          <ion-item>
+            <ion-label position="fixed"> <strong>Nome</strong>  </ion-label>
+            <ion-input type="text" name="nome" [ngModel]="cliente.nome" readonly></ion-input>
+          </ion-item>
+          -->
+
+          <ion-item>
+            <ion-label position="fixed"> <strong>Código</strong></ion-label>
+            <ion-input type="number" name="codigo" [ngModel]="cliente.id" readonly></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="fixed"> <strong>E-mail</strong></ion-label>
+            <ion-input type="text" name="email" [ngModel]="cliente.email" readonly></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="fixed"><strong>Telefone</strong></ion-label>
+            <ion-input type="number" name="telefone" [ngModel]="cliente.telefone" readonly></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label position="fixed"><strong>Descricao</strong></ion-label>
+            <ion-textarea>{{cliente.descricao}}</ion-textarea>
+          </ion-item>
+
+
+          <ion-button (click)="deletar()" color="danger" expand="block">
+            Excluir
+          </ion-button>
+
+        </form>
+      
+
+    </ion-card-content>
+
+  </ion-card>
+
+
+</ion-content>
