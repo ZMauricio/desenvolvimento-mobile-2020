@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>form-exemplo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+ 
+  
+  <form #form="ngForm" [formGroup]="clienteForm" (submit)="submit()">
+
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+
+      <small class="error-message" *ngIf="(clienteForm.get('nome').errors?.required || clienteForm.get('nome').errors?.minlength || clienteForm.get('nome').errors?.maxlength) && (clienteForm.get('nome').touched  || form.submitted)">
+        Por favor, preencha o campo nome corretamente!
+      </small>
+
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+
+      <small class="error-message" *ngIf="(clienteForm.get('email').errors?.required || clienteForm.get('email').errors?.email) && (clienteForm.get('email').touched  || form.submitted)">
+        Por favor, informe o e-mail corretamente!
+      </small>
+
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input type="tel" formControlName="telefone"></ion-input>
+
+      <small class="error-message" *ngIf="clienteForm.get('telefone').errors?.required && (clienteForm.get('telefone').touched  || form.submitted)">
+        Por favor, informe o telefone!
+      </small>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Renda</ion-label>
+      <ion-input type="number" formControlName="renda"></ion-input>
+
+      <small class="error-message" *ngIf="(clienteForm.get('renda').errors?.required || clienteForm.get('renda').errors?.min) && (clienteForm.get('renda').touched  || form.submitted)">
+        Por favor, informe um valor válido para a renda!
+      </small>
+
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="floating">Data de nascimento</ion-label>
+     
+      <ion-datetime displayFormat="DD/MM/YY" min="1900-01-01" formControlName="nascimento"></ion-datetime>
+
+      <small class="error-message" *ngIf="clienteForm.get('nascimento').errors?.required && (clienteForm.get('nascimento').touched  || form.submitted)">
+        Por favor, informe uma data válida!
+      </small>
+
+    </ion-item>
+   
+
+
+    
+
+
+    <ion-item>
+      <ion-radio-group formControlName="genero">
+        <ion-list-header>
+          <ion-label>
+            <strong>Gênero:</strong>
+          </ion-label>
+        </ion-list-header>
+    
+        <ion-item>
+          <ion-label>masculino</ion-label>
+          <ion-radio value="m"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>feminino</ion-label>
+          <ion-radio value="f"></ion-radio>
+        </ion-item>
+
+        <small	class="error-message" *ngIf="clienteForm.get('genero').errors?.required && (clienteForm.get('nome').touched  || form.submitted)">
+          Selecione o gênero
+        </small>
+
+      </ion-radio-group>
+      
+    </ion-item>
+
+
+
+
+    <ion-button type="submit" expand="block" color="success" shape="round">
+      Salvar
+    </ion-button>
+
+  </form>
+
+
+</ion-content>
