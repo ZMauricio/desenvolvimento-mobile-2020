@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>exemplo-pipes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Data atual</ion-label>
+      {{  hoje | date : 'dd / MMMM /yyyy' }}
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Data atual 2</ion-label>
+      {{  hoje | date : 'long' }}
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Data atual</ion-label>
+      {{  hoje | date : 'long' | uppercase }}
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Tempo com date</ion-label>
+      {{  hoje | date : 'mm:ss' }}
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Dólar</ion-label>
+      {{  dolar | currency: 'EUR' }}
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Real</ion-label>
+      {{  real | currency: 'BRL' }}
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Uppercase</ion-label>
+      {{ textao | uppercase }}
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Lowercase</ion-label>
+      {{ textinho | lowercase }}
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Número Um</ion-label>
+      {{ valorUm | number: '3.1-4' }}
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Número Dois</ion-label>
+      {{ valorDois | number: '3.3-4' }}
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Meu pipe</ion-label>
+      {{ numero | meuPipe: 5 }}
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

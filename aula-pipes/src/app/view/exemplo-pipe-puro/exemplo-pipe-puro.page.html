@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>exemplo-pipe-puro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-item>
+  <ion-label>Valor</ion-label>
+  <ion-input type="number" [(ngModel)]="valor"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Expoente</ion-label>
+  <ion-input type="number" [(ngModel)]="expoente"></ion-input>
+</ion-item>
+
+<h3>Resultado</h3>
+{{ valor | potencia: expoente }}
+
+
+</ion-content>

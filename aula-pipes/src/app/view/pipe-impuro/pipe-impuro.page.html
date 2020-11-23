@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>pipe-impuro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label>Nome</ion-label>
+    <ion-input type="text" placeholder="Nome do Aluno" [(ngModel)]="nome"></ion-input>
+  </ion-item>
+
+  <ion-item>
+
+    <ion-grid fixed class="ion-no-padding">
+      <ion-row class="ion-no-padding">
+        <ion-col size="6">
+          <ion-button (click)="adicionar()" expand="block" shape="round" color="primary">
+            adicionarRef
+          </ion-button>
+        </ion-col>
+        
+        <ion-col size="6">
+
+          <ion-button (click)="adicionarImpuro()" expand="block" shape="round" color="success">
+            adicionarImpuro
+          </ion-button>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-item>
+
+  <h1>Lista de alunos</h1>
+  <!--
+  <div *ngFor="let aluno of (alunos | alunosMatriculados)">
+  -->
+  <div *ngFor="let aluno of (alunos | alunosMatriculadosImpuro)">
+
+    <ion-item>
+      <ion-label>{{aluno.nome}}</ion-label>
+    </ion-item>
+    
+  </div>
+
+</ion-content>
