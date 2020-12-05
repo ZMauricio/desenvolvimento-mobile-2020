@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">Clientes</ion-title>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let obj of clientes" routerLink="/cliente-detalhes/{{obj.id}}">
+
+    <ion-item color="primary">
+
+      <ion-avatar slot="start">
+        <!--
+        <img [src]="obj.foto">
+        -->
+        <img [src]="obj.uriFotoParaExibir">
+      </ion-avatar>
+
+      <ion-label>
+        <h5>{{obj.nome}}</h5>
+        <p> <strong>Code:</strong> {{obj.id}}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-card-content>
+      
+      <ion-item>
+        <ion-label>E-mail</ion-label>
+        {{obj.email}}
+      </ion-item>
+      <ion-item>
+        <ion-label>Telefone</ion-label>
+        {{obj.telefone}}
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" [routerLink]="['/cliente-novo']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+
+
+</ion-content>

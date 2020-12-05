@@ -1,0 +1,7 @@
+{
+  "name": "aula-02-routing-menu",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
